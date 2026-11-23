@@ -259,7 +259,7 @@ async function customerDetail(id) {
   );
 }
 async function previewData() {
-  // Preview joins always use demo masters, even when API mode is active.
+  // Keep demo records separate from API data.
   for (const k of [
     "customers",
     "vehicles",
@@ -1094,4 +1094,5 @@ if (mode === "api") {
 } else if (location.hash && location.hash !== "#/login")
   user = { FullName: "Demo User" };
 await render();
+
 
